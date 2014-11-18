@@ -52,9 +52,15 @@ class Is_member(Request):
 class Add_member(Request):
     uri = 'teams/{id}/members/{user}'
 
+class Add_membership(Request):
+    uri = 'teams/{id}/memberships/{user}'
+
 
 class Remove_member(Request):
     uri = 'teams/{id}/members/{user}'
+
+class Remove_membership(Request):
+    uri = 'teams/{id}/memberships/{user}'
 
 
 class List_repos(Request):

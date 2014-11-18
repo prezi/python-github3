@@ -74,7 +74,7 @@ class Teams(Service):
         return self._bool(request)
 
     def add_member(self, id, user):
-        """ Add a user to a team
+        """ Add a user to a team / deprecated
 
         :param int id: The team id
         :param str user: User name
@@ -83,13 +83,33 @@ class Teams(Service):
                                        id=id, user=user)
         return self._put(request)
 
+    def add_membership(self, id, user):
+        """ Add a user to a team / new api
+
+        :param int id: The team id
+        :param str user: User name
+        """
+        request = self.request_builder('orgs.teams.add_membership',
+                                       id=id, user=user)
+        return self._put(request)
+
     def remove_member(self, id, user):
-        """ Remove a member from a team
+        """ Remove a member from a team / deprecated api
 
         :param int id: The team id
         :param str user: User name
         """
         request = self.request_builder('orgs.teams.remove_member',
+                                       id=id, user=user)
+        return self._delete(request)
+
+    def remove_membership(self, id, user):
+        """ Remove a member from a team / new api
+
+        :param int id: The team id
+        :param str user: User name
+        """
+        request = self.request_builder('orgs.teams.remove_membership',
                                        id=id, user=user)
         return self._delete(request)
 
