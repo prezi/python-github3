@@ -64,12 +64,22 @@ class Teams(Service):
         return self._get_result(request)
 
     def is_member(self, id, user):
-        """ Determine if user is a member of a team
+        """ Determine if user is a member of a team / deprecated
 
         :param int id: The team id
         :param str user: User name
         """
         request = self.request_builder('orgs.teams.is_member',
+                                       id=id, user=user)
+        return self._bool(request)
+
+    def has_membership(self, id, user):
+        """ Determine if user is a member of a team / new api, handling pending status
+
+        :param int id: The team id
+        :param str user: User name
+        """
+        request = self.request_builder('orgs.teams.has_membership',
                                        id=id, user=user)
         return self._bool(request)
 

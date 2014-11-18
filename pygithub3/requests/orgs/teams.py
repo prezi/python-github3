@@ -48,6 +48,9 @@ class List_members(Request):
 class Is_member(Request):
     uri = 'teams/{id}/members/{user}'
 
+class Has_membership(Request):
+    uri = 'teams/{id}/memberships/{user}'
+
 
 class Add_member(Request):
     uri = 'teams/{id}/members/{user}'
