@@ -28,7 +28,7 @@ class Create(Request):
     resource = Repo
     body_schema = {
         'schema': ('name', 'description', 'homepage', 'private', 'has_issues',
-                   'has_wiki', 'has_downloads', 'team_id'),
+                   'has_wiki', 'has_downloads', 'team_id', 'auto_init'),
         'required': ('name', )
     }
 
