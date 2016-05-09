@@ -143,15 +143,16 @@ class Teams(Service):
                                        id=id, user=user, repo=repo)
         return self._bool(request)
 
-    def add_repo(self, id, user, repo):
+    def add_repo(self, id, org, repo, permission="pull"):
         """ Give team members access to a repo
 
         :param int id: The team id
-        :param str user: User name
+        :param str org: Organization id
         :param str repo: Repo name
+        :param str permission: Permission to grant (pull, push, admin)
         """
         request = self.request_builder('orgs.teams.add_repo',
-                                       id=id, user=user, repo=repo)
+                                       id=id, org=org, repo=repo, permission=permission)
         return self._put(request)
 
     def remove_repo(self, id, user, repo):
