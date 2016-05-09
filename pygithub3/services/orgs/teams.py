@@ -152,7 +152,7 @@ class Teams(Service):
         :param str permission: Permission to grant (pull, push, admin)
         """
         request = self.request_builder('orgs.teams.add_repo',
-                                       id=id, org=org, repo=repo, permission=permission)
+                                       id=id, org=org, repo=repo, body={"permission": permission})
         return self._put(request)
 
     def remove_repo(self, id, user, repo):
