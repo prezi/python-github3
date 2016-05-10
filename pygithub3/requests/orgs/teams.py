@@ -76,7 +76,11 @@ class Contains_repo(Request):
 
 
 class Add_repo(Request):
-    uri = 'teams/{id}/repos/{user}/{repo}'
+    uri = 'teams/{id}/repos/{org}/{repo}'
+    body_schema = {
+        'schema': ('permission',),
+        'required': ('permission',),
+    }
 
 
 class Remove_repo(Request):
