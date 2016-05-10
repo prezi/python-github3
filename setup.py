@@ -14,7 +14,7 @@ except ImportError:
     pass
 
 setup(
-    name=pygithub3.__name__,
+    name='prezi-pygithub3',
     version=pygithub3.__version__,
     author=pygithub3.__author__,
     author_email=pygithub3.__email__,

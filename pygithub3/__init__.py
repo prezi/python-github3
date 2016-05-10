@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 
-__title__ = 'pygithub3'
+__title__ = 'prezi-pygithub3'
 __version__ = '0.5.1'
 __author__ = 'David Medina'
 __email__ = 'davidmedina9@gmail.com'
